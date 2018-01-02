@@ -1,13 +1,13 @@
 package com.entity;
 
 public class tb_type {
-	private int tib;
+	private int tid;
 	private String tname;
-	public int getTib() {
-		return tib;
+	public int getTid() {
+		return tid;
 	}
-	public void setTib(int tib) {
-		this.tib = tib;
+	public void setTid(int tid) {
+		this.tid = tid;
 	}
 	public String getTname() {
 		return tname;
@@ -19,7 +19,7 @@ public class tb_type {
 	
 	@Override
 	public String toString() {
-		return "tb_type [tib=" + tib + ", tname=" + tname + "]";
+		return "tb_type [tib=" + tid + ", tname=" + tname + "]";
 	}
 	
 }

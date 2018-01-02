@@ -5,7 +5,14 @@ private int id;
 private String name;
 private String password;
 private String ncname;
+private String isvip;
 
+public String getIsvip() {
+	return isvip;
+}
+public void setIsvip(String isvip) {
+	this.isvip = isvip;
+}
 public int getId() {
 	return id;
 }

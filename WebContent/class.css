@@ -1,0 +1,26 @@
+/*
+* @Author: CPC
+* @Date:   2017-11-29 23:51:15
+* @Last Modified by:   CPC
+* @Last Modified time: 2017-11-30 00:50:22
+*/
+.center{
+	margin: 0 auto;width: 1200px;
+}
+.page{
+	margin:0 auto; width:500px;
+	text-align: center;
+	margin-top: 50px;
+	margin: 0 auto;width: 250px;
+
+}
+.page a {
+	text-decoration: none;
+	border: 1px solid #f9d52b;
+	padding: 5px 7px;
+	color:#767675;
+	cursor: pointer;
+}
+.page div{
+	float: left;
+}

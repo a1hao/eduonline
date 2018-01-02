@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.entity.tb_shiping;
+import com.untils.pingjia;
 import com.video.play.service.showPlayService;
 import com.video.play.service.impl.showPlayServiceImpl;
 
@@ -17,7 +18,7 @@ import com.video.play.service.impl.showPlayServiceImpl;
 /**
  * Servlet implementation class showVideoByidServlet
  */
-@WebServlet("/showVideoByidServlet")
+@WebServlet("/playvideo")
 public class showVideoByidServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -28,13 +29,49 @@ public class showVideoByidServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String sid=request.getParameter("id");
-		int id=Integer.parseInt(sid);
+		String shibian=request.getParameter("shibian");
+		int id=Integer.parseInt(shibian);
+		// 获取登陆用户信息
+				Object tempObj =  request.getSession().getAttribute("name");
+				if(tempObj == null){
+					response.sendRedirect("Login.jsp");
+					return;
+				}
+				String userinfo = (String)tempObj;
+				
+				
 		showPlayService service=new showPlayServiceImpl();
-		List<tb_shiping> list=service.findAllVodeoByid(id);
 		
-		request.getSession().setAttribute("list", list);
-		response.sendRedirect("main.jsp");
+		//判断是否已经收藏
+		int isboolean=service.isShoucang(userinfo,shibian);
+	  //	List<tb_shiping> list=service.findAllVodeoByid(id);
+		
+		//获得要播放的视频的内容
+		List<tb_shiping> videolist=service.findVodeoByid(id);
+		System.out.println(videolist.get(0).getVideo());
+		  request.setAttribute("videolist", videolist.get(0));
+		
+		//获得该视频的各个评论信息
+		  List<pingjia> pingjialist=null;
+		  try {
+			   pingjialist=service.findPingJiaByid(id);
+			} catch (IndexOutOfBoundsException e) {
+				// TODO Auto-generated catch block
+				request.setAttribute("pingjialist", null);
+			}
+		
+		
+		
+		
+		//request.getSession().setAttribute("list", list);
+		//response.sendRedirect("main.jsp");
+		
+		  request.setAttribute("pingjialist", pingjialist);
+		  request.setAttribute("isboolean", isboolean);
+		  
+		  System.out.println("--------------------------------------"+isboolean+"------------------------------------------");
+          request.getRequestDispatcher("video.jsp").forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

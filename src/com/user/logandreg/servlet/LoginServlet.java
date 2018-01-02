@@ -41,7 +41,11 @@ public class LoginServlet extends HttpServlet {
 			ResultSet rs = psta.executeQuery();
 			if (rs.next()) {
 				String name = rs.getString(2);
+				String password1 = rs.getString(3);
+				String ncname = rs.getString(4);
 				request.getSession().setAttribute("name", name);
+				request.getSession().setAttribute("password", password1);
+				request.getSession().setAttribute("ncname", ncname);
 				System.out.println(name);
 				response.sendRedirect("show");
 			} else {

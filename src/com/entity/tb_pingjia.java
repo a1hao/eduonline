@@ -1,6 +1,8 @@
 package com.entity;
 
 public class tb_pingjia {
+	
+private int pid;
 private int id;
 private int shibian;
 private String pingjia;
@@ -24,9 +26,15 @@ public void setPingjia(String pingjia) {
 }
 
 
+public int getPid() {
+	return pid;
+}
+public void setPid(int pid) {
+	this.pid = pid;
+}
 @Override
 public String toString() {
-	return "tb_pingjia [id=" + id + ", shibian=" + shibian + ", pingjia=" + pingjia + "]";
+	return "tb_pingjia [pid=" + pid + ", id=" + id + ", shibian=" + shibian + ", pingjia=" + pingjia + "]";
 }
 
 

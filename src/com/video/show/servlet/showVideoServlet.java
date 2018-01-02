@@ -24,11 +24,28 @@ public class showVideoServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		  
+		
+		//实例化服务类
            showVideoService service=new showVideoServiceImpl();
-           List<tb_shiping> videolist=service.findAddVideo();
-           request.setAttribute("videolist", videolist);
-           System.out.println("执行到这里");
-           request.getRequestDispatcher("index.jsp").forward(request, response);
+           
+        //   List<tb_shiping> videolist=service.findAddVideo();
+        //   request.setAttribute("videolist", videolist);
+        //  System.out.println("执行到这里");
+        //  request.getRequestDispatcher("index.jsp").forward(request, response);
+           
+           //找到推荐视频
+           List<tb_shiping> recommendVideoList=service.findRecommendVideo();
+           
+           request.setAttribute("recommendVideoList", recommendVideoList);
+     
+           //找到免费视频
+           List<tb_shiping> freeVideoList=service.findFreeVideo();
+           request.setAttribute("freeVideoList", freeVideoList);
+           
+    
+           
+           request.getRequestDispatcher("HomePage.jsp").forward(request, response);
 	}
 
 

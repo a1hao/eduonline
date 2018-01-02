@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/Register")
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static String URL = "jdbc:mysql://localhost:3306/zhonghekechengdb?useUnicode=true&characterEncoding=UTF-8";
@@ -19,22 +20,26 @@ public class RegisterServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		String ncname = request.getParameter("ncname");
+		String isvip = request.getParameter("isvip");
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(URL, USERNAME, PASS);
-			String sql = "insert into tb_user(name,password,ncname) values(?,?,?)";
+			String sql = "insert into tb_user(name,password,ncname,isvip) values(?,?,?,?)";
 			PreparedStatement psta = con.prepareStatement(sql);
 			psta.setString(1, name);
 			psta.setString(2, password);
 			psta.setString(3, ncname);
+			psta.setString(4, isvip);
 			int num = psta.executeUpdate();
 			if (num > 0) {
-				// ×¢²á³É¹¦
-				response.sendRedirect("Login.jsp");
+				// ×¢ï¿½ï¿½É¹ï¿½
+				response.sendRedirect("tiaozhuan.jsp");
 			} else {
 				response.sendRedirect("Register.jsp");
 			}

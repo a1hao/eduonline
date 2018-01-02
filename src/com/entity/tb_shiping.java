@@ -4,8 +4,31 @@ public class tb_shiping {
 private int shibian;
 private String texttitle;
 private String text;
+private String video;
 private String picture;
 private int tid;
+private int ok;
+private int members;
+
+public String getVideo() {
+	return video;
+}
+public void setVideo(String video) {
+	this.video = video;
+}
+public int getOk() {
+	return ok;
+}
+public void setOk(int ok) {
+	this.ok = ok;
+}
+
+public int getMembers() {
+	return members;
+}
+public void setMembers(int members) {
+	this.members = members;
+}
 public int getTid() {
 	return tid;
 }
@@ -39,6 +62,9 @@ public void setPicture(String picture) {
 }
 @Override
 public String toString() {
-	return "tb_shiping [shibian=" + shibian + ", texttite=" + texttitle + ", text=" + text + "]";
+	return "tb_shiping [shibian=" + shibian + ", texttitle=" + texttitle + ", text=" + text + ", video=" + video
+			+ ", picture=" + picture + ", tid=" + tid + ", ok=" + ok + ", members=" + members + "]";
 }
+
+
 }
