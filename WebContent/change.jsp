@@ -38,7 +38,7 @@
 					</div>
 					<div class="text">
 						<span style="color: red">原密码：</span>
-						<input type="text" name="password" placeholder="原密码" value="${password}"/><br />
+						<input type="text" name="password" placeholder="原密码"/><br />
 					</div>
 					<div class="text">
 						<span style="color: red">新密码：</span>

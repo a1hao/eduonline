@@ -36,7 +36,11 @@
         <!-- 顶部右边 -->
         <div class="float_r">
             <div class="float_l top_input">
-                <input class="posi_relative" type="text" name="" id="" placeholder="请输入想搜索的内容...">
+                <form action="search_class">
+                <input class="posi_relative" type="text" name="keyword" id="" placeholder="请输入想搜索的内容...">
+                              <img src="img/uiz5.png">
+                  <img src="img/uiz3.png">
+             </form>
                 <img class="img_sousuo bianshou" src="img/uiz4.png">
             </div>
             <div class="float_l margin_l20">

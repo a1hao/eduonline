@@ -38,8 +38,11 @@
             <div class="float_l top_input">
             <form action="search_class">
                 <input class="posi_relative" type="text" name="keyword" id="" placeholder="请输入想搜索的内容...">
-             </form>
                 <img class="img_sousuo bianshou" src="img/uiz4.png">
+                                 <img src="img/uiz5.png">
+                  <img src="img/uiz3.png">
+             </form>
+                
             </div>
             <div class="float_l margin_l20">
             </div>
@@ -54,6 +57,7 @@
                         </c:when>
         				<c:otherwise> 
         	<div class="float_l margin_l35"><a href="#">用户：${name}</a></div>
+        	<div class="float_l margin_l35"><a href="Shoucang">我的收藏</a></div>
             <div class="float_l margin_l30 margin_r40"><a href="cancellation.jsp">注销 </a> </div>
             <div class="float_l margin_l30 margin_r40"><a href="change.jsp">修改密码 </a> </div>
         				</c:otherwise>

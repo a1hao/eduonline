@@ -34,16 +34,18 @@
         <!-- 顶部右边 -->
         <div class="float_r">
             <div class="float_l top_input">
-              <form action="search_class">
+            <form action="search_class">
                 <input class="posi_relative" type="text" name="keyword" id="" placeholder="请输入想搜索的内容...">
+                <img class="img_sousuo bianshou" src="img/uiz4.png">
+                 <img src="img/uiz5.png">
+                  <img src="img/uiz3.png">
              </form>
-                             <img class="img_sousuo bianshou" src="img/uiz4.png">
             </div>
             <div class="float_l margin_l20">
-                <img src="img/uiz5.png">
+               
             </div>
             <div class="float_l margin_l40">
-                <img src="img/uiz3.png">
+               
             </div>
 
            <c:choose>

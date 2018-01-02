@@ -43,8 +43,13 @@
         <!-- 顶部右边 -->
         <div class="float_r">
             <div class="float_l top_input">
-                <input class="posi_relative" type="text" name="" id="" placeholder="请输入想搜索的内容...">
-                <img class="img_sousuo bianshou" src="img/uiz4.png">
+                <form action="search_class">
+                <input class="posi_relative" type="text" name="keyword" id="" placeholder="请输入想搜索的内容...">
+                 <img class="img_sousuo bianshou" src="img/uiz4.png">
+                  <img src="img/uiz5.png">
+                  <img src="img/uiz3.png">
+                  </form>
+                
             </div>
                     <c:choose>
 						<c:when test="${name==null}">
@@ -85,7 +90,7 @@
      <div class="demo">
    <c:choose>
    <c:when test="${isboolean==1}">
-      <a href="shoucang_check?shibian=${videolist.shibian }" class="button white">
+      <a href="#" class="button white">
                 已经收藏
      </a>
      </c:when>

@@ -36,8 +36,12 @@
         <!-- 顶部右边 -->
         <div class="float_r">
             <div class="float_l top_input">
-                <input class="posi_relative" type="text" name="" id="" placeholder="请输入想搜索的内容...">
+            <form action="search_class">
+                <input class="posi_relative" type="text" name="keyword" id="" placeholder="请输入想搜索的内容...">
                 <img class="img_sousuo bianshou" src="img/uiz4.png">
+                                 <img src="img/uiz5.png">
+                  <img src="img/uiz3.png">
+             </form>
             </div>
             <div class="float_l margin_l20">
             </div>
@@ -268,7 +272,7 @@
     <div>&nbsp</div> <div>&nbsp</div> <div>&nbsp</div>
     <div>
     <div class="page">
-    <div><span><a href="class_1.jsp">上一页</a></span></div>
+    <div><span><a href="Class_1.jsp">上一页</a></span></div>
     <div>&nbsp</div> <div>&nbsp</div> <div>&nbsp</div>
     <div ><a href="class_1.jsp">1</a></div>
     <div>&nbsp</div> <div>&nbsp</div> <div>&nbsp</div>
@@ -276,7 +280,7 @@
     <div>&nbsp</div> <div>&nbsp</div> <div>&nbsp</div>
     <div ><a href="#">3</a></div>
     <div>&nbsp</div> <div>&nbsp</div> <div>&nbsp</div>
-    <div><span><a class="a" href="class_2.jsp">下一页</a></span></div>
+    <div><span><a class="a" href="Class_2.jsp">下一页</a></span></div>
     </div>
     </div>
     </body>
